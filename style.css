@@ -1,0 +1,73 @@
+@import url('https://fonts.googleapis.com/css?');
+*{
+    margin: 0%;
+    padding: 0%;
+    box-sizing: border-box;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+html,body{
+    display: grid;
+    height: 100%;
+    place-items: center;
+    background-color: pink;
+    overflow : hidden;
+
+
+}
+button{
+    position: relative;
+    height: 60px;
+    width: 200px;
+    margin: 0 35px;
+    border-radius: 50px;
+    border: none;
+    outline: none;
+    background-color: #111;
+    color: cornsilk;
+    font-size: 25px;
+    letter-spacing: 3px;
+    text-transform: uppercase;
+    cursor: pointer;
+
+}
+button:first-child:hover{
+    background: linear-gradient(80deg, blue, rgb(170, 44, 44), yellow, orange);
+    background-size: 300%;
+}
+button:last-child:hover{
+    background: linear-gradient(90deg, rgb(212, 25, 41),greenyellow,greenyellow, orange);
+    background-size: 400%
+}
+button:first-child::before,
+button:last-child:before{
+    content: '';
+    position: absolute;
+    background: inherit;
+    top: -4px;
+    right: -4px;
+    bottom: -4px;
+    left: -4px;
+    border-radius: 40px;
+    filter: blur(30px);
+    opacity: 0;
+}
+button:first-child::before,
+button:last-child:before{
+    opacity: 1;
+    z-index: -1;
+}
+button:hover{
+    z-index: 1;
+    animation: glow 9s linear infinite;
+}
+@keyframes glow{
+    0%{
+        background-position: 0%;
+    }
+    100%{
+
+    
+    background-position: 0%;
+    }
+}
+
